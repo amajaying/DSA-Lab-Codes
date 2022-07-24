@@ -8,7 +8,7 @@ void subseq(char arr[], int n){
             j=i+l-1;
             for(k=i;k<=j;k++)
             printf("%c",arr[k]);
-             printf(" ");
+            printf("\n");
         }
 }
 }
