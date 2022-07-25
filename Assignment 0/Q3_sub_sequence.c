@@ -1,26 +1,31 @@
-// Not completed!
 #include <stdio.h>
+#include <math.h>
 
-void subseq(char arr[], int n){
-    int i,j,k,l;
-    for(l=1;l<=n;l++){
-        for( i=0;i<=n-l;i++){
-            j=i+l-1;
-            for(k=i;k<=j;k++)
-            printf("%c",arr[k]);
-            printf("\n");
+void generateSubsequences(char str[], int n)
+{
+    int num = 1;
+    while (num <= pow(2, n) - 1)
+    {
+        int temp = num, i = 0;
+        while (i < n)
+        {
+            if ((temp >> i) & 1)
+                printf("%c", str[i]);
+            i++;
         }
-}
+        printf("\n");
+        num++;
+    }
 }
 
-int main(){
-    char input[30];
-    printf("Enter string: ");
-    scanf("%s",input);
-    int len=0;
-    while(input[len]!='\0'){
-      len++;
-    }
-    subseq(input,len);
+int main()
+{
+    char str[100];
+    printf("Enter the string: ");
+    scanf("%s", &str);
+    int n = 0;
+    while (str[n] != '\0')
+        n++;
+    generateSubsequences(str, n);
     return 0;
 }
