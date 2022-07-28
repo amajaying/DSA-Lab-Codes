@@ -22,7 +22,7 @@ int main()
 {
     char str[100];
     printf("Enter the string: ");
-    scanf("%s", &str);
+    scanf("%s", str);
     int n = 0;
     while (str[n] != '\0')
         n++;
