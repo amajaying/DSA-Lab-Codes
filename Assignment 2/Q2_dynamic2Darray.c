@@ -15,12 +15,13 @@ int main(){
             scanf("%d", &arr[i*b+j]);
         }
     }
-    printf("\nThe 2D array is: ");
+    printf("\nThe 2D array is: \n");
 
     // Printing
     for(int i=0; i<a; i++){
         for(int j=0; j<b; j++){
             printf("%d ", arr[i*b+j]);
         }
+        printf("\n");
     }
 }
