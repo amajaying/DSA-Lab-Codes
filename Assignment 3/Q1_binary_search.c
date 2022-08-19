@@ -30,7 +30,4 @@ int main(){
         m = s + (e-s)/2; 
     }
     printf("Not Found!");
-
-
-
 }
