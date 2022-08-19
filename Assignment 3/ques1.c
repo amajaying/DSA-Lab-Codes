@@ -28,6 +28,7 @@ int main(){
         printf("\nFinding GCD\n");
         // now finding GCD
         int ans = 0;
+        int x1;
         for( int i = 1; i <= x && i <= p; ++i)  
         {  
             if (x % i ==0 && p % i == 0)  
@@ -36,10 +37,21 @@ int main(){
         if(ans!=1)
             exit(1);
         else{
-            printf("\nFinding Lastnumber\n");
-            int z = pow(x,a);
-            int lastans = z%p;
-            printf("The last ans is: %d",lastans);
+            if(a>p){
+                printf("\nFinding Lastnumber\n");
+                int temp = p-1;
+                if(temp<a){
+                    temp = temp *2;
+                    x1=temp;
+                }
+                else{
+                    x1= a-temp;
+                }
+                int z = pow(x,x1);
+                int lastans = z%p;
+                printf("%d", lastans);
+
+            }
         }
 
   
