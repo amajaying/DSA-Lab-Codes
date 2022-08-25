@@ -1,19 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(){
-    int n;
-    printf("Enter the size of array: ");
-    scanf("%d", &n);
-    int arr[n];
-    printf("Enter the elements: ");
-    for(int i=0; i<n; i++){
-        scanf("%d", &arr[i]);
-    }
-    int k;
-    printf("Enter element to search: ");
-    scanf("%d", &k);
 
-    // Applying binary search 
+void binary_search(int n, int arr[n], int k){
     int s = 0;
     int e = n-1;
     int m = s + (e-s)/2; 
@@ -31,4 +19,21 @@ int main(){
         m = s + (e-s)/2; 
     }
     printf("Not Found!");
+}
+
+int main(){
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for(int i=0; i<n; i++){
+        scanf("%d", &arr[i]);
+    }
+    int k;
+    printf("Enter element to search: ");
+    scanf("%d", &k);
+
+    // Applying binary search 
+    binary_search(n,arr,k);
 }

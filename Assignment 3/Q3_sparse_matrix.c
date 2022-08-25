@@ -16,5 +16,8 @@ int main(){
                 oneCount++;
         }
     }
+    int x = 
+
+
 
 }
