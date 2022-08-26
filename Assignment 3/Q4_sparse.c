@@ -45,7 +45,7 @@ int main(){
         printf("\n");
     }
 
-    int arr2[count][count];
+    int arr2[r][c];
     printf("\n The transpose is \n");
     for(int i=0;i<3;i++){
         for(int j=0;j<count;j++){
@@ -55,12 +55,8 @@ int main(){
         printf("\n");
     }
 
-    for(int i=0;i<count;i++){
-        for(int j=0;j<count;j++){
-            printf("%d",arr1[i][j]+arr2[i][j]);
-        }
-    }
-
+    int arr3[count][count];
+    for(int i=0; i<)
 
     return 0;
 }
