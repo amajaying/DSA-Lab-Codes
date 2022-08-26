@@ -2,8 +2,8 @@
 
 void transpose(int n,int m,int a[n][m]){
     printf("The transpose of the matrix is: \n");
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
             printf("%d ",a[j][i]);
         }
         printf("\n");
