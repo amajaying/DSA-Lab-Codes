@@ -55,8 +55,6 @@ int main(){
         printf("\n");
     }
 
-    int arr3[count][count];
-    for(int i=0; i<)
 
     return 0;
 }
