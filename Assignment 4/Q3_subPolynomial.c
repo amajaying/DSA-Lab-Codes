@@ -46,7 +46,7 @@ int main(){
     for(int i=max-1; i>=0; i-- ){
         
         printf("%dx^%i ", ans[i], i);
-        if((i!=0 || ans[i]<0))
+        if((i!=0 && ans[i]>0))
             printf("+ ");
     }
     return 0; 

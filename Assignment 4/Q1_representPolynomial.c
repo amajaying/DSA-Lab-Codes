@@ -10,9 +10,9 @@ int main(){
     }
     printf("\n");
     for(int i=n-1; i>=0; i-- ){
-        printf("%dx^%i ", arr[i], i);
+        printf("%dx^%d ", arr[i], i);
         if(i!=0)
             printf("+ ");
     }
-
+  
 }
