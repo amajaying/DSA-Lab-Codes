@@ -20,6 +20,7 @@ void create_node(){
         temp = newnode;
     }
 }
+
 void displayMenu(){
     printf("------------------------------MENU------------------------------\n");
     printf("1. Traverse the linked list and print the data.\n");

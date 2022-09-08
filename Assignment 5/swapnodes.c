@@ -32,6 +32,7 @@ void create(int n)
     }
     
 }
+
 void display()
 {
     struct node *temp;
@@ -51,56 +52,27 @@ void display()
     printf("\n");
 }
 
-void swap(int p1, int p2){
-    int pos1, pos2;
-    if(p2>p1){
-        pos1=p1;
-        pos2=p2;
+
+int swap(struct node *list, int pos1, int pos2, int n){
+    struct node *temp, *temp1;
+    int totalNodes = n;
+    int maxPos = (pos1>pos2) ? pos1 : pos2;
+    if ((pos1 <= 0 || pos1 > totalNodes) || (pos2 <= 0 || pos2 > totalNodes))
+    {
+        return -1;
     }
-    else{
-        pos1=p2;
-        pos2=p1;
-    }
-    struct node *prev, *temp;
-    int i=1,j=1;
-    if(pos1==1)
-        prev = head;
-    else{
-        for(prev = head; i<pos1-1; prev= prev->next, i++);
-    }
-    for(temp = head; j < pos2; temp=temp->next, j++);
-
-    if(pos1 == 1){
-        head = temp;
-        prev->next = temp->next;
-        temp->next = prev;
-    }
-    else{
-        prev->next->next = temp->next;
-        temp->next = prev->next;
-        prev->next = temp;
-    }
-
-    display();
-
-}
-int main()
-{
-    int n, pos1, pos2;
-     printf("Enter number of nodes to create: ");
-    scanf("%d", &n);
-
-    create(n);
-    printf("\n\nData before swapping: \n");
-    display();
-
-    printf("Enter which two adjacent nodes do you want to swap: ");
-    scanf("%d%d", &pos1,&pos2);
-
-    swap(pos1, pos2);
     
+    if (pos1 == pos2)
+    {
+        return 1;
+    }
 
-    return 0;
+    int i=1;
+    temp1 = head;
+    while(temp1->next!=NULL && i<=maxPos){
+        if(i== pos1-1)
+            temp = temp1->next;
+    }
 
 
 }

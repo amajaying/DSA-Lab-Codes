@@ -87,14 +87,14 @@ int swap(struct node *list, int pos1, int pos2, int n)
         i++;
     }
     if (node1 != NULL && node2 != NULL)
-    {
+    { 
         if (prev1 != NULL)
             prev1->next = node2;
         if (prev2 != NULL)
             prev2->next = node1;
         temp        = node1->next;
         node1->next = node2->next;
-        node2->next = temp;
+        node2->next = temp; 
         if (prev1 == NULL)
             head = node2;
         else if (prev2 == NULL)
