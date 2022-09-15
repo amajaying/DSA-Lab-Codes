@@ -1,5 +1,7 @@
 # DSA-Lab
 # Hi! I am amajaying!
 
-This repo consists of all the codes of the DSA lab and all the self practiced question I did.
-<img src="https://tenor.com/view/coding-gif-24625099" width="100%">
+<h3>This repo consists of all the codes of the DSA lab and all the self practiced question I did.</h3>
+
+<br><br>
+<img src="https://cdn.mos.cms.futurecdn.net/9QTpESGBXa32D29J77VR3d.jpg" width="100%">
