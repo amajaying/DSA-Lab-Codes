@@ -6,12 +6,12 @@ struct node
     struct node *next;
 };
 
-struct node *head=NULL;
+struct node *head = NULL;
 void create(int n)
 {
     struct node *newnode, *temp;
-    head=malloc(sizeof(struct node));
-    if (head==NULL)
+    head = malloc(sizeof(struct node));
+    if (head == NULL)
     {
         printf("Node doesn't exist.");
         exit(0);
@@ -30,7 +30,6 @@ void create(int n)
         temp->next = newnode;
         temp = temp->next;
     }
-    
 }
 void display()
 {
@@ -39,14 +38,14 @@ void display()
     {
         printf("List is empty.\n");
         return;
-    }   
+    }
     temp = head;
     while (temp != NULL)
     {
         printf("%d", temp->data);
-        if(temp->next!=NULL)
-            printf(", ");     
-        temp = temp->next;             
+        if (temp->next != NULL)
+            printf(", ");
+        temp = temp->next;
     }
     printf("\n");
 }
@@ -62,13 +61,13 @@ int swap(struct node *list, int pos1, int pos2, int n)
     {
         return -1;
     }
-    
+
     if (pos1 == pos2)
     {
         return 1;
     }
     i = 1;
-    temp  = list;
+    temp = list;
     prev1 = NULL;
     prev2 = NULL;
     while (temp != NULL && (i <= maxPos))
@@ -87,14 +86,14 @@ int swap(struct node *list, int pos1, int pos2, int n)
         i++;
     }
     if (node1 != NULL && node2 != NULL)
-    { 
+    {
         if (prev1 != NULL)
             prev1->next = node2;
         if (prev2 != NULL)
             prev2->next = node1;
-        temp        = node1->next;
+        temp = node1->next;
         node1->next = node2->next;
-        node2->next = temp; 
+        node2->next = temp;
         if (prev1 == NULL)
             head = node2;
         else if (prev2 == NULL)
@@ -106,27 +105,25 @@ int swap(struct node *list, int pos1, int pos2, int n)
 int main()
 {
     int n, pos1, pos2;
-     printf("Enter number of nodes to create: ");
+    printf("Enter number of nodes to create: ");
     scanf("%d", &n);
 
     create(n);
     printf("\n\nData before swapping: \n");
     display();
 
-    printf("Enter which two nodes do you want to swap: ");
-    scanf("%d%d", &pos1,&pos2);
+    printf("Enter which two nodes to swap: ");
+    scanf("%d%d", &pos1, &pos2);
 
     if (swap(head, pos1, pos2, n))
     {
         printf("Data after swapping %d node with %d: \n", pos1, pos2);
         display();
     }
-    else 
+    else
     {
         printf("Position doesn't exist!\n");
     }
 
     return 0;
-
-
 }

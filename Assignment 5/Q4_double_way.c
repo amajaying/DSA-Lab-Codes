@@ -1,19 +1,8 @@
-// Write a C Program to create a Double-Way linked list and perform the basic
-// operations:
-// a) Creation
-// b) isEmpty
-// c) isFull
-// d) Insertion_from_start
-// e) Insertion_from_end
-// f) Deletion_from_start
-// g) Deletion_from_end
-// h) Search_from_start
-// i) Search_from_end
+#include <stdio.h>
+#include <stdlib.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-
-struct node{
+struct node
+{
     int data;
     struct node *prev;
     struct node *next;
@@ -21,7 +10,8 @@ struct node{
 
 struct node *head = NULL;
 
-void displayMenu(){
+void displayMenu()
+{
     printf("\nMENU\n");
     printf("1. Create node\n");
     printf("2. Is Empty\n");
@@ -35,17 +25,21 @@ void displayMenu(){
     printf("10. Exit\n");
 }
 
-void displayNodes(){
+void displayNodes()
+{
     struct node *temp = head;
     printf("\nThe data are: ");
-    while(temp!=NULL){
+    while (temp != NULL)
+    {
         printf("%d ", temp->data);
-        temp=temp->next;
+        temp = temp->next;
     }
 }
 
-void create_node(int n){
-    for(int i=0; i<n; i++){
+void create_node(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
         struct node *new_node, *temp;
         int data;
         printf("Enter data: ");
@@ -54,12 +48,15 @@ void create_node(int n){
         new_node->data = data;
         new_node->prev = NULL;
         new_node->next = NULL;
-        if(head == NULL){
+        if (head == NULL)
+        {
             head = new_node;
         }
-        else{
+        else
+        {
             temp = head;
-            while(temp->next != NULL){
+            while (temp->next != NULL)
+            {
                 temp = temp->next;
             }
             temp->next = new_node;
@@ -70,29 +67,36 @@ void create_node(int n){
     displayMenu();
 }
 
-void isEmpty() {
-    if(head == NULL){
+void isEmpty()
+{
+    if (head == NULL)
+    {
         printf("The list is empty");
     }
-    else{
+    else
+    {
         printf("The list is not empty");
     }
     displayMenu();
 }
 
-void isFull() {
+void isFull()
+{
     struct node *new_node;
     new_node = (struct node *)malloc(sizeof(struct node));
-    if(new_node == NULL){
+    if (new_node == NULL)
+    {
         printf("The list is full");
     }
-    else{
+    else
+    {
         printf("The list is not full");
     }
     displayMenu();
 }
 
-void insert_from_start() {
+void insert_from_start()
+{
     struct node *new_node;
     int data;
     printf("Enter data: ");
@@ -101,10 +105,12 @@ void insert_from_start() {
     new_node->data = data;
     new_node->prev = NULL;
     new_node->next = NULL;
-    if(head == NULL){
+    if (head == NULL)
+    {
         head = new_node;
     }
-    else{
+    else
+    {
         new_node->next = head;
         head->prev = new_node;
         head = new_node;
@@ -113,7 +119,8 @@ void insert_from_start() {
     displayMenu();
 }
 
-void insert_from_end() {
+void insert_from_end()
+{
     struct node *new_node, *temp;
     int data;
     printf("Enter data: ");
@@ -122,12 +129,15 @@ void insert_from_end() {
     new_node->data = data;
     new_node->prev = NULL;
     new_node->next = NULL;
-    if(head == NULL){
+    if (head == NULL)
+    {
         head = new_node;
     }
-    else{
+    else
+    {
         temp = head;
-        while(temp->next != NULL){
+        while (temp->next != NULL)
+        {
             temp = temp->next;
         }
         temp->next = new_node;
@@ -137,12 +147,15 @@ void insert_from_end() {
     displayMenu();
 }
 
-void delete_from_start() {
+void delete_from_start()
+{
     struct node *temp;
-    if(head == NULL){
+    if (head == NULL)
+    {
         printf("The list is empty");
     }
-    else{
+    else
+    {
         temp = head;
         head = head->next;
         head->prev = NULL;
@@ -152,14 +165,18 @@ void delete_from_start() {
     displayMenu();
 }
 
-void delete_from_end() {
+void delete_from_end()
+{
     struct node *temp;
-    if(head == NULL){
+    if (head == NULL)
+    {
         printf("The list is empty");
     }
-    else{
+    else
+    {
         temp = head;
-        while(temp->next != NULL){
+        while (temp->next != NULL)
+        {
             temp = temp->next;
         }
         temp->prev->next = NULL;
@@ -169,94 +186,107 @@ void delete_from_end() {
     displayMenu();
 }
 
-void search_from_start() {
+void search_from_start()
+{
     struct node *temp;
-    int data, flag=0;
+    int data, flag = 0;
     printf("Enter data to search: ");
     scanf("%d", &data);
     temp = head;
-    while(temp != NULL){
-        if(temp->data == data){
+    while (temp != NULL)
+    {
+        if (temp->data == data)
+        {
             flag = 1;
             break;
         }
         temp = temp->next;
     }
-    if(flag == 1){
+    if (flag == 1)
+    {
         printf("Data found");
     }
-    else{
+    else
+    {
         printf("Data not found");
     }
     displayMenu();
 }
 
-void search_from_end() {
+void search_from_end()
+{
     struct node *temp;
-    int data, flag=0;
+    int data, flag = 0;
     printf("Enter data to search: ");
     scanf("%d", &data);
     temp = head;
-    while(temp->next != NULL){
+    while (temp->next != NULL)
+    {
         temp = temp->next;
     }
-    while(temp != NULL){
-        if(temp->data == data){
+    while (temp != NULL)
+    {
+        if (temp->data == data)
+        {
             flag = 1;
             break;
         }
         temp = temp->prev;
     }
-    if(flag == 1){
+    if (flag == 1)
+    {
         printf("Data found");
     }
-    else{
+    else
+    {
         printf("Data not found");
     }
     displayMenu();
 }
 
-
-int main(){
+int main()
+{
     int choice, n;
     displayMenu();
-    while(1){
+    while (1)
+    {
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
-        switch(choice){
-            case 1:
-                printf("Enter the number of nodes: ");
-                scanf("%d", &n);
-                create_node(n);
-                break;
-            case 2:
-                isEmpty();
-                break;
-            case 3:
-                isFull();
-                break;
-            case 4:
-                insert_from_start();
-                break;
-            case 5:
-                insert_from_end();
-                break;
-            case 6:
-                delete_from_start();
-                break;
-            case 7:
-                delete_from_end();
-                break;
-            case 8:
-                search_from_start();
-                break;
-            case 9:
-                search_from_end();
-                break;
-            case 10:
-                exit(0);
-            default:
-                printf("Invalid choice");
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the number of nodes: ");
+            scanf("%d", &n);
+            create_node(n);
+            break;
+        case 2:
+            isEmpty();
+            break;
+        case 3:
+            isFull();
+            break;
+        case 4:
+            insert_from_start();
+            break;
+        case 5:
+            insert_from_end();
+            break;
+        case 6:
+            delete_from_start();
+            break;
+        case 7:
+            delete_from_end();
+            break;
+        case 8:
+            search_from_start();
+            break;
+        case 9:
+            search_from_end();
+            break;
+        case 10:
+            exit(0);
+        default:
+            printf("Invalid choice");
         }
     }
     return 0;
