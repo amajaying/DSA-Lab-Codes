@@ -11,37 +11,6 @@ struct node
 
 struct node *top = NULL;
 
-void push();
-void pop();
-void display();
-
-int main()
-{
-    int choice;
-    while(1)
-    {
-        printf("1.Push \n2.Pop \n3.Display \n4.Exit \n");
-        printf("Enter your choice: ");
-        scanf("%d",&choice);
-        switch(choice)
-        {
-            case 1:
-                push();
-                break;
-            case 2:
-                pop();
-                break;
-            case 3:
-                display();
-                break;
-            case 4:
-                exit(0);
-            default:
-                printf("Wrong choice \n");
-        }
-    }
-}
-
 void push()
 {
     int value;
@@ -104,6 +73,33 @@ void display()
         {
             printf("%d ",ptr->data);
             ptr = ptr->next;
+        }
+    }
+}
+
+int main()
+{
+    int choice;
+    while(1)
+    {
+        printf("1.Push \n2.Pop \n3.Display \n4.Exit \n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Wrong choice \n");
         }
     }
 }

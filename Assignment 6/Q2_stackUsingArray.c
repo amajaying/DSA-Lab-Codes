@@ -3,9 +3,50 @@
 #include<stdlib.h>
 
 int stack[100], choice, n, top, x, i;
-void push(void);
-void pop(void);
-void display(void);
+
+
+void push()
+{
+    if(top>=n-1)
+    {
+        printf("Stack Overflow");
+    }
+    else
+    {
+        printf("Enter a value to be pushed:");
+        scanf("%d", &x);
+        top++;
+        stack[top]=x;
+    }
+}
+
+void pop()
+{
+    if(top<=-1)
+    {
+        printf("Stack Underflow\n");
+    }
+    else
+    {
+        printf("The popped elements is %d\n", stack[top]);
+        top--;
+    }
+}
+
+void display()
+{
+    if(top>=0)
+    {
+        printf("\n The elements in STACK ");
+        for(i=top; i>=0; i--)
+            printf("\n%d ",stack[i]);
+        printf("\n");
+    }
+    else
+    {
+        printf("The STACK is empty");
+    }
+}
 
 int main()
 {
@@ -51,51 +92,6 @@ int main()
     while(choice!=4);
     return 0;
 }
-
-void push()
-{
-    if(top>=n-1)
-    {
-        printf("Stack Overflow");
-    }
-    else
-    {
-        printf("Enter a value to be pushed:");
-        scanf("%d", &x);
-        top++;
-        stack[top]=x;
-    }
-}
-
-void pop()
-{
-    if(top<=-1)
-    {
-        printf("Stack Underflow\n");
-    }
-    else
-    {
-        printf("The popped elements is %d\n", stack[top]);
-        top--;
-    }
-}
-
-void display()
-{
-    if(top>=0)
-    {
-        printf("n The elements in STACK ");
-        for(i=top; i>=0; i--)
-            printf("\n%d ",stack[i]);
-        printf("\n");
-    }
-    else
-    {
-        printf("The STACK is empty");
-    }
-}
-
-
 
 
 

@@ -19,69 +19,6 @@ struct node
 struct node *head = NULL;
 struct node *tail = NULL;
 
-void create();
-void insert_begin();
-void insert_end();
-void insert_pos();
-void delete_begin();
-void delete_end();
-void delete_pos();
-void display();
-
-int main()
-{
-    int choice = 0;
-    while (choice != 9)
-    {
-        printf("\nMENU:\n");
-        printf("\n1. Create a node\n");
-        printf("2. Insert at beginning\n");
-        printf("3. Insert at end\n");
-        printf("4. Insert at any position\n");
-        printf("5. Delete at beginning\n");
-        printf("6. Delete at end\n");
-        printf("7. Delete at any position\n");
-        printf("8. Display LinkedList\n");
-        printf("9. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            create();
-            break;
-        case 2:
-            insert_begin();
-            break;
-        case 3:
-            insert_end();
-            break;
-        case 4:
-            insert_pos();
-            break;
-        case 5:
-            delete_begin();
-            break;
-        case 6:
-            delete_end();
-            break;
-        case 7:
-            delete_pos();
-            break;
-        case 8:
-            display();
-            break;
-        case 9:
-            exit(0);
-            break;
-
-        default:
-            printf("Please enter valid choice..");
-        }
-    }
-    return 0;
-}
-
 void create()
 {
     struct node *newNode;
@@ -266,4 +203,58 @@ void display()
         }
         printf("%d ", temp->data);
     }
+}
+
+int main()
+{
+    int choice = 0;
+    while (choice != 9)
+    {
+        printf("\nMENU:\n");
+        printf("\n1. Create a node\n");
+        printf("2. Insert at beginning\n");
+        printf("3. Insert at end\n");
+        printf("4. Insert at any position\n");
+        printf("5. Delete at beginning\n");
+        printf("6. Delete at end\n");
+        printf("7. Delete at any position\n");
+        printf("8. Display LinkedList\n");
+        printf("9. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            create();
+            break;
+        case 2:
+            insert_begin();
+            break;
+        case 3:
+            insert_end();
+            break;
+        case 4:
+            insert_pos();
+            break;
+        case 5:
+            delete_begin();
+            break;
+        case 6:
+            delete_end();
+            break;
+        case 7:
+            delete_pos();
+            break;
+        case 8:
+            display();
+            break;
+        case 9:
+            exit(0);
+            break;
+
+        default:
+            printf("Please enter valid choice..");
+        }
+    }
+    return 0;
 }

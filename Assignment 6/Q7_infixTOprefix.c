@@ -6,10 +6,52 @@
 
 int stack[100], top = -1;
 
-void push(char);
-char pop();
-int priority(char);
 
+void push(char x)
+{
+    if (top >= 99)
+    {
+        printf("Stack Overflow");
+    }
+    else
+    {
+        top++;
+        stack[top] = x;
+    }
+}
+
+char pop()
+{
+    char x;
+    if (top < 0)
+    {
+        printf("Stack Underflow");
+        exit(1);
+    }
+    else
+    {
+        x = stack[top];
+        top--;
+        return x;
+    }
+}
+
+int priority(char x)
+{
+    if (x == '(')
+    {
+        return 0;
+    }
+    if (x == '+' || x == '-')
+    {
+        return 1;
+    }
+    if (x == '*' || x == '/' || x == '%')
+    {
+        return 2;
+    }
+    return 0;
+}
 int main()
 {
     char infix[100], prefix[100], temp;
@@ -64,51 +106,5 @@ int main()
     prefix[j] = '\0';
     strrev(prefix);
     printf("The prefix expression is: %s", prefix);
-    return 0;
-}
-
-void push(char x)
-{
-    if (top >= 99)
-    {
-        printf("Stack Overflow");
-    }
-    else
-    {
-        top++;
-        stack[top] = x;
-    }
-}
-
-char pop()
-{
-    char x;
-    if (top < 0)
-    {
-        printf("Stack Underflow");
-        exit(1);
-    }
-    else
-    {
-        x = stack[top];
-        top--;
-        return x;
-    }
-}
-
-int priority(char x)
-{
-    if (x == '(')
-    {
-        return 0;
-    }
-    if (x == '+' || x == '-')
-    {
-        return 1;
-    }
-    if (x == '*' || x == '/' || x == '%')
-    {
-        return 2;
-    }
     return 0;
 }

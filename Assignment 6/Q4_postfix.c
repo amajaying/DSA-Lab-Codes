@@ -4,11 +4,49 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
 int stack[100], top = -1;
 
-void push(int);
-int pop();
-int priority(char);
+void push(int num)
+{
+    if (top >= 99)
+    {
+        printf("Stack Overflow");
+    }
+    else
+    {
+        top++;
+        stack[top] = num;
+    }
+}
+
+int pop()
+{
+    int num;
+    if (top <= -1)
+    {
+        printf("Stack Underflow");
+    }
+    else
+    {
+        num = stack[top];
+        top--;
+        return num;
+    }
+}
+
+int priority(char op)
+{
+    if (op == '*' || op == '/' || op == '%')
+    {
+        return 1;
+    }
+    else if (op == '+' || op == '-')
+    {
+        return 0;
+    }
+}
 
 int main()
 {
@@ -52,45 +90,4 @@ int main()
     printf("Result of expression is %d", pop());
     return 0;
 }
-
-void push(int num)
-{
-    if (top >= 99)
-    {
-        printf("Stack Overflow");
-    }
-    else
-    {
-        top++;
-        stack[top] = num;
-    }
-}
-
-int pop()
-{
-    int num;
-    if (top <= -1)
-    {
-        printf("Stack Underflow");
-    }
-    else
-    {
-        num = stack[top];
-        top--;
-        return num;
-    }
-}
-
-int priority(char op)
-{
-    if (op == '*' || op == '/' || op == '%')
-    {
-        return 1;
-    }
-    else if (op == '+' || op == '-')
-    {
-        return 0;
-    }
-}
-
 

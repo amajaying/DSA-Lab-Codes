@@ -6,9 +6,49 @@
 
 int stack[100], top = -1;
 
-void push(int);
-int pop();
-int priority(char);
+void push(int item)
+{
+    if (top >= 99)
+    {
+        printf("Stack Overflow");
+    }
+    else
+    {
+        top++;
+        stack[top] = item;
+    }
+}
+
+int pop()
+{
+    int item;
+    if (top < 0)
+    {
+        printf("Stack Underflow");
+    }
+    else
+    {
+        item = stack[top];
+        top--;
+        return item;
+    }
+}
+
+int priority(char op)
+{
+    if (op == '+' || op == '-')
+    {
+        return 1;
+    }
+    else if (op == '*' || op == '/' || op == '%')
+    {
+        return 2;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 int main()
 {
@@ -52,48 +92,4 @@ int main()
     }
     printf("The result of the prefix expression is: %d", pop());
     return 0;
-}
-
-void push(int item)
-{
-    if (top >= 99)
-    {
-        printf("Stack Overflow");
-    }
-    else
-    {
-        top++;
-        stack[top] = item;
-    }
-}
-
-int pop()
-{
-    int item;
-    if (top < 0)
-    {
-        printf("Stack Underflow");
-    }
-    else
-    {
-        item = stack[top];
-        top--;
-        return item;
-    }
-}
-
-int priority(char op)
-{
-    if (op == '+' || op == '-')
-    {
-        return 1;
-    }
-    else if (op == '*' || op == '/' || op == '%')
-    {
-        return 2;
-    }
-    else
-    {
-        return 0;
-    }
 }
