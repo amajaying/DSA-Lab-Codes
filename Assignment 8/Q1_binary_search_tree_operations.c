@@ -83,7 +83,7 @@ int main()
             break;
 
         case 2:
-            printf("Sorry! This feature is not available yet");
+            printf("\n\nSorry! This feature is not available yet\n\n");
             break;
 
         case 3:
