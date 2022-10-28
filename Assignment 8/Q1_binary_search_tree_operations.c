@@ -56,96 +56,6 @@ void insert(int data)
     }
 }
 
-void delete (int data)
-{
-    struct node *temp = root;
-    struct node *parent = NULL;
-    while (temp != NULL)
-    {
-        if (data == temp->data)
-        {
-            break;
-        }
-        else
-        {
-            parent = temp;
-            if (data < temp->data)
-            {
-                temp = temp->left;
-            }
-            else
-            {
-                temp = temp->right;
-            }
-        }
-    }
-    if (temp == NULL)
-    {
-        printf("The node is not found");
-    }
-    else
-    {
-        if (temp->left == NULL && temp->right == NULL)
-        {
-            if (parent->left == temp)
-            {
-                parent->left = NULL;
-            }
-            else
-            {
-                parent->right = NULL;
-            }
-            free(temp);
-        }
-        else if (temp->left == NULL || temp->right == NULL)
-        {
-            if (temp->left == NULL)
-            {
-                if (parent->left == temp)
-                {
-                    parent->left = temp->right;
-                }
-                else
-                {
-                    parent->right = temp->right;
-                }
-            }
-            else
-            {
-                if (parent->left == temp)
-                {
-                    parent->left = temp->left;
-                }
-                else
-                {
-                    parent->right = temp->left;
-                }
-            }
-            free(temp);
-        }
-        else
-        {
-            struct node *temp1 = temp->right;
-            struct node *parent1 = temp;
-            while (temp1->left != NULL)
-            {
-                parent1 = temp1;
-                temp1 = temp1->left;
-            }
-            temp->data = temp1->data;
-            if (parent1->left == temp1)
-            {
-                parent1->left = temp1->right;
-            }
-            else
-            {
-                parent1->right = temp1->right;
-            }
-            free(temp1);
-        }
-    }
-}
-
 void traverse(struct node *temp)
 {
     if (temp != NULL)
@@ -173,9 +83,7 @@ int main()
             break;
 
         case 2:
-            printf("Enter the data: ");
-            scanf("%d", &data);
-            delete (data);
+            printf("Sorry! This feature is not available yet");
             break;
 
         case 3:
