@@ -1,4 +1,4 @@
-// WAP to create a Binary Search Tree having the following operations:
+// WAP to create a Binary Search Tree using array having the following operations:
 // 1. Insert a node 2. delete a node 3. traversal search a tree
 
 #include <stdio.h>
