@@ -56,9 +56,9 @@ void traverse(struct node *temp)
 {
     if (temp != NULL)
     {
-        traverse(temp->right);
-        printf("%d ", temp->data);
         traverse(temp->left);
+        printf("%d ", temp->data);
+        traverse(temp->right);
     }
 }
 int main()
