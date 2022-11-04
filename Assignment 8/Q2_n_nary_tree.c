@@ -1,4 +1,4 @@
-// WAP to implement N-ary (n-degree) tree using array having the following operations:
+// WAP to implement N-ary (n-degree) tree using dynamic array having the following operations:
 // Insert a Node
 // Traverse
 
